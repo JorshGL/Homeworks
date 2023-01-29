@@ -1,0 +1,23 @@
+{
+  "name": "homeworks",
+  "version": "1.0.0",
+  "engines": {
+    "node": "18.13.0"
+  },
+  "main": "arrays.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorshGL/Homeworks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorshGL/Homeworks/issues"
+  },
+  "homepage": "https://github.com/JorshGL/Homeworks#readme",
+  "description": ""
+}
