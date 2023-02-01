@@ -108,10 +108,55 @@ const mapMethods = (arr) => {
     )
     .set(
       ".push(14)",
-      `returns length: ${arr.push(14)}, array: ${arr}`
+      `returns length: ${arr.push(10)}, array: ${arr}`
     )
     .set(
-
+      ".reduce((acum, item) => acum - item)",
+      arr.reduce((acum, item) => acum - item)
+    )
+    .set(
+      ".reduceRight((acum, item) => acum - item)",
+      arr.reduceRight((acum, item) => acum - item)
+    )
+    .set(
+      ".reverse()",
+      [...arr].reverse()
+    )
+    .set(
+      ".shift()",
+      `returns element: ${arr.shift()}, array: ${arr}`
+    )
+    .set(
+      ".unshift(1)",
+      `returns length: ${arr.unshift(1)}, array: ${arr}`
+    )
+    .set(
+      ".slice(3, -2)",
+      [...arr].slice(3, -2)
+    )
+    .set(
+      ".some((item) => item/3 === 2)",
+      arr.some((item) => item/3 === 2)
+    )
+    .set(
+      ".sort((item1, item2) => item2 - item1)",
+      [...arr].sort((item1, item2) => item2 - item1)
+    )
+    .set(
+      ".toLocaleString()",
+      arr.toLocaleString()
+    )
+    .set(
+      ".toString()",
+      arr.toString()
+    )
+    .set(
+      ".values()",
+      Array.from(arr.values())
+    )
+    .set(
+      ".splice(5, 3, 12, 13, 14)",
+      `returns positions: ${arr.splice(5, 3, 12, 13, 14)}, array: ${arr}`
     )
   return map;
 }
