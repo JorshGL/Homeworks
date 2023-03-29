@@ -1,36 +1,31 @@
-import React, { useCallback, useReducer } from "react";
-import TodoReducer from "./TodoReducer";
+import React from "react";
 import TodoList from "./TodoList";
 import Inputs from "./Inputs";
-
-const initialState = [
-  {
-    id: new Date().getTime(),
-    description: "Hacer los challenges",
-    done: false,
-  },
-];
+import useTodo from "../hooks/UseTodo";
 
 const TodoApp = () => {
-  const [todos, dispatchTodo] = useReducer(TodoReducer, initialState);
-
-  const handleNewTodo = useCallback((todo) => {
-    const action = {
-      type: "[TODO] ADD TODO",
-      payload: todo,
-    };
-    dispatchTodo(action);
-  });
+  const {
+    todos,
+    handleNewTodo,
+    handleRemoveTodo,
+    handleToggleDoneTodo,
+    countTodos,
+    countPendingTodos,
+  } = useTodo();
 
   return (
     <div className="flex flex-col items-center w-screen h-screen bg-slate-600 text-white p-5 gap-5">
       <h1 className="text-5xl font-bold">
-        TodoApp: 10. <small>Pendientes: 2</small>
+        TodoApp: {countTodos}. <small>Pendientes: {countPendingTodos}</small>
       </h1>
       <hr />
 
       <div className="flex flex-col items-center w-full">
-        <TodoList todos={todos} />
+        <TodoList
+          todos={todos}
+          handleRemoveTodo={handleRemoveTodo}
+          handleToggleDoneTodo={handleToggleDoneTodo}
+        />
         <Inputs onNewTodo={handleNewTodo} />
       </div>
     </div>
